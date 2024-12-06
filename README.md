@@ -1,11 +1,57 @@
-# Sample Snack app
+# Aplicativo de Operações Matemáticas com React Native
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+Este projeto é uma aplicação móvel desenvolvida em React Native que permite realizar operações matemáticas básicas (soma e subtração), navegar entre telas utilizando um menu de navegação do tipo drawer e exibir o histórico das operações realizadas.
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+## Funcionalidades
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+1. **Operações Matemáticas**:
+   - Realize soma e subtração entre dois números.
+   - Validação de entrada para garantir que os valores sejam numéricos.
+   
+2. **Histórico de Operações**:
+   - Exibe uma lista de todas as operações realizadas, com a expressão completa e o resultado.
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+3. **Navegação com Drawer**:
+   - Menu lateral que permite acessar as telas disponíveis:
+     - Tela inicial.
+     - Operações de soma e subtração.
+     - Histórico de operações.
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+4. **Interface Intuitiva**:
+   - Uso de componentes como `TextInput`, `Button` e `FlatList` para uma experiência amigável.
+
+5. **Context API**:
+   - Gerenciamento de estado global para compartilhar dados entre telas.
+
+## Estrutura do Projeto
+
+### Componentes Principais
+
+- **`AppProvider`**:
+  - Gerencia o estado global da aplicação usando Context API.
+  - Armazena os dados da operação (números, tipo de operação, resultado e expressão).
+
+- **Telas**:
+  - `HomeScreen`: Entrada de números e seleção da operação.
+  - `OperationScreen`: Configuração da operação a ser realizada.
+  - `ResultScreen`: Exibe o histórico de operações realizadas.
+
+- **CustomDrawerContent**:
+  - Componente personalizado para o menu lateral (drawer).
+
+### Fluxo de Navegação
+
+1. O usuário insere dois números na tela inicial.
+2. Escolhe a operação desejada (soma ou subtração).
+3. O resultado é calculado e adicionado ao histórico.
+4. O usuário pode acessar o histórico ou realizar outras operações.
+
+## Estilos
+
+- **Campo de Entrada (`TextInput`)**:
+  - Borda arredondada, espaço interno confortável e separação visual clara.
+- **Lista de Operações (`FlatList`)**:
+  - Apresenta cada operação como um item da lista.
+- **Botões**:
+  - Cor vermelha para destacar ações importantes.
+
